@@ -8,8 +8,13 @@ import {Uploadgiftpage} from './pages/uploadgift';
 import {Homepage} from './pages/home';
 
 import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
+//State logged in 
+//state 
 
 function App() {
+
+  const [ loggedIn, setLoggedIn ] = React.useState(false)
+
   return (
     <Router>
       <Switch>
@@ -17,7 +22,7 @@ function App() {
           <Accountpage />
         </Route>
         <Route path="/registerlogin">
-          <Registerpage />
+          <Registerpage loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
         </Route>
         <Route path="/thankyou">
           <Thankyoupage />

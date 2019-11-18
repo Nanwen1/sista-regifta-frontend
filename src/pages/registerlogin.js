@@ -1,10 +1,32 @@
 import React from 'react';
+import {Redirect} from 'react-router-dom'
+import {Header} from '../sections/header';
+import {RegisterForm} from '../sections/registerform';
+import {LoginForm} from '../sections/loginform';
 
 
-export function Registerpage(){
+export function Registerpage(props){
+
+    const [whichForm, setWhichFrom] = React.useState('login')
+
     return(
       <div>
-        Register page
+
+        {props.loggedIn === true && <Redirect to="/account" />}
+
+        <Header/>
+        {whichForm === 'login' && 
+            <div>
+                <LoginForm setLoggedIn={props.setLoggedIn} />
+                <button onClick={() => setWhichFrom('register')}>I dont have an account!</button>
+            </div>
+        }
+        {whichForm === 'register' &&
+            <div>
+                <RegisterForm />
+                <button onClick={() => setWhichFrom('login')}>I already have an account!</button>
+            </div>
+        }
       </div>  
     )
 }
