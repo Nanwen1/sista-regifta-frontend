@@ -7,8 +7,8 @@ export function Header(props){
             Top bar/navigation
             location state will need to get here
             <Link to='/registerlogin'>
-                {props.loggedin === true && 'Log Out'}
-                {!props.loggedin && 'Log In or Register'}
+                {props.loggedIn === true && 'Log Out'}
+                {!props.loggedIn && 'Log In or Register'}
             </Link> 
         </div> 
     )

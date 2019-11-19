@@ -1,6 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
+
 import './styles/App.css';
+import 'bootstrap/dist/css/bootstrap.css';
+
+import {Header} from './sections/header'
 import {Accountpage} from './pages/account';
 import {Registerpage} from './pages/registerlogin';
 import {Thankyoupage} from './pages/thankyou';
@@ -14,12 +17,15 @@ import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 function App() {
 
   const [ loggedIn, setLoggedIn ] = React.useState(false)
-
+  
   return (
     <Router>
+
+      <Header loggedIn={loggedIn}/>
+
       <Switch>
         <Route path="/account">
-          <Accountpage />
+          <Accountpage/>
         </Route>
         <Route path="/registerlogin">
           <Registerpage loggedIn={loggedIn} setLoggedIn={setLoggedIn} />

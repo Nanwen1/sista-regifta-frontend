@@ -5,7 +5,6 @@ import {Header} from '../sections/header';
 export function Uploadgiftpage(){
     return(
       <div>
-        <Header />
         <form action="/" method="post">
             <label>
                 What is this gift

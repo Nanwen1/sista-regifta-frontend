@@ -1,6 +1,5 @@
 import React from 'react';
 import {Redirect} from 'react-router-dom'
-import {Header} from '../sections/header';
 import {RegisterForm} from '../sections/registerform';
 import {LoginForm} from '../sections/loginform';
 
@@ -13,8 +12,6 @@ export function Registerpage(props){
       <div>
 
         {props.loggedIn === true && <Redirect to="/account" />}
-
-        <Header/>
         {whichForm === 'login' && 
             <div>
                 <LoginForm setLoggedIn={props.setLoggedIn} />
