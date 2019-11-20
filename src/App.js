@@ -17,11 +17,12 @@ import { BrowserRouter as Router, Route, Switch} from "react-router-dom";
 function App() {
 
   const [ loggedIn, setLoggedIn ] = React.useState(false)
+  const [ currentPage, setCurrentPage]  = React.useState('home'); //default to home page
   
   return (
     <Router>
 
-      <Header loggedIn={loggedIn}/>
+      <Header loggedIn={loggedIn} currentPage = {currentPage} setCurrentPage = {setCurrentPage}/>
 
       <Switch>
         <Route path="/account">

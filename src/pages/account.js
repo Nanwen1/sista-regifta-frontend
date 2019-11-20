@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import {Swap} from '../components/swap';
 
 // should come from django
-const testSwapData = [
+const SwapData = [
   {
     id: 1,
     giftName: '3000 piece puzzle',
@@ -45,7 +45,7 @@ export function Accountpage(){
 
         {/* list of swaps */}
         <ul className="list-group">
-          {testSwapData.map(swap => {
+          {SwapData.map(swap => {
             return (
               <Swap data={swap} key={swap.id} />
             )

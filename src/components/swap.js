@@ -1,7 +1,9 @@
+
+
 import React from 'react';
-
+import {Link} from 'react-router-dom'
 export function Swap(props) {
-
+//${props.matched.name}
     const { data } = props
 
     return (
@@ -31,6 +33,8 @@ export function Swap(props) {
                                         <h3>Your gift to {data.matched.name} has been sent! to {data.matched.address}🏡</h3>
                                     </>
                                 }
+
+
                                 {data.matched.yourGiftStatus === 'pending' && 
                                     <>
                                         <h3>{data.matched.name} has not posted her gift yet 🎀</h3>
@@ -51,9 +55,7 @@ export function Swap(props) {
                                     <>
                                         <h3>Received your gift? Send a thanks! 📫</h3>
                                         <form>
-                                            <button> 
-                                                Send those warm and fuzzies!
-                                            </button>
+                                            <Link to={`/thankyou?`} >Send a warm and fuzzy!</Link>
                                         </form>
                                     </>
                                 }

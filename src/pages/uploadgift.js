@@ -7,7 +7,7 @@ export function Uploadgiftpage(){
       <div>
         <form action="/" method="post">
             <label>
-                What is this gift
+                What is this gift (don't worry, only you can see this)
                 <input type="text" name="giftname" />
             </label>
             <button type="submit">Find me a sista to gifta</button>
